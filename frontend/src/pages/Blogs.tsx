@@ -1,5 +1,5 @@
 import { Appbar } from "../components/Appbar"
-import { Avatar, BlogCard } from "../components/BlogCard"
+import { BlogCard } from "../components/BlogCard"
 import { BlogSkeleton } from "../components/BlogSkeleton";
 import { useBlogs } from "../hooks/index."
 
