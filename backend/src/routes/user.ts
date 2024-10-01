@@ -50,10 +50,10 @@ userRouter.post('/signup', async (c) => {
         { id: user.id },
         c.env.JWT_SECRET
       )
+
+      
   
-      return c.json({
-        token
-      })
+      return c.redirect('/blogs');
     } catch (e) {
       console.log(e);
       c.status(411);
@@ -90,7 +90,7 @@ userRouter.post('/signup', async (c) => {
       const jwt = await sign(
         {id: user.id},c.env.JWT_SECRET)
   
-      return c.text(jwt)
+        return c.redirect('/blogs');
     } catch (e) {
       console.log(e);
       c.status(411);

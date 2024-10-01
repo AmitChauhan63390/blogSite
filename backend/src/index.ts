@@ -22,10 +22,10 @@ app.use('/api/v1/blog/*', async (c, next) => {
   const header = c.req.header("authorization") || "";
   const token = header.split(" ")[1];
 
-  const response = await verify(header, c.env.JWT_SECRET)
+  const response = await verify(token, c.env.JWT_SECRET)
 
   if (response.id) {
-    next();
+    await next();
 
   } else {
     c.status(403)
